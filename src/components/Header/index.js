@@ -4,7 +4,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 function Header() {
   return (
-    <header className="w-full p-4 px-10 flex items-center justify-between">
+    <header className="w-full p-4 px-10 flex items-center justify-between z-50">
       <Logo />
       <nav
         className="
@@ -12,7 +12,7 @@ function Header() {
         py-3 px-8 border border-solid 
         border-dark rounded-full 
         font-medium capitalize flex items-center
-        bg-light/80 backdrop-blur-sm
+        bg-light/80 backdrop-blur-sm z-50
         "
       >
         <Link className="mr-2" href="/">
