@@ -3,4 +3,4 @@ Creation of a personal blog using NextJS and ContentLayer for the easy integrati
 
 #### Video Resource
 https://www.youtube.com/watch?v=nkGjob3q2GI
-minute: 1:26:31
+minute: 3:45:40
