@@ -56,7 +56,7 @@ const CategoryPage = ({ params }) => {
         categories={allCategories}
         currentSlug={params.slug}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-24 px-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-24 px-8">
         {blogs.map((blog, index) => {
           return (
             <article key={index} className="col-span-1 row-span-1 relative">

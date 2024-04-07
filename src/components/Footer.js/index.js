@@ -1,4 +1,5 @@
 "use client";
+import siteMetadata from "@/utils/siteMetaData";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -28,13 +29,13 @@ const Footer = () => {
         <input type="submit" className="bg-dark text-light p-2 rounded-md"/>
       </form>
       <div className="flex gap-3 pt-8">
-        <a href="http://ex.com" className="text-lg">
+        <a href={`${siteMetadata.github}`} className="text-lg" target="BLANK">
           <FaGithub  fontSize={30}/>
         </a>
-        <a href="http://ex.com">
+        <a href={`${siteMetadata.instagram}`} target="BLANK">
           <FaInstagram fontSize={30}/>
         </a>
-        <a href="http://ex.com">
+        <a href={`${siteMetadata.linkedin}`} target="BLANK">
           <FaLinkedin fontSize={30}/>
         </a>
       </div>

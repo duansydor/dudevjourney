@@ -4,7 +4,7 @@ import Image from "next/image";
 function Logo() {
   return (
     <Link href="/" className="flex items-center text-dark">
-      <div className="w-16 rounded-full overflow-hidden border border-solid border-dark dark:border-light">
+      <div className="w-16 rounded-full overflow-hidden border border-solid border-dark dark:border-light dark:bg-light">
         <Image
           src="/profile-img.png"
           alt="profile"

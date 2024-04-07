@@ -4,7 +4,7 @@ import BlogLayoutThree from "../Blog/BlogLayoutThree";
 function RecentPosts({ blogs }) {
   const sortedBlogs = sortBlogs(blogs);
   return (
-    <section className="w-full mt-32 px-32 flex flex-col items-center justify-center">
+    <section className="w-full mt-16 px-8 flex flex-col items-center justify-center">
       <div className="flex w-full justify-between">
         <h2 className=" inline-block font-bold capitalize text-4xl dark:text-light">
           Recent Posts
