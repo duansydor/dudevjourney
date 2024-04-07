@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 function BlogLayoutTwo({ blog }) {
   return (
-    <div className=" group grid grid-cols-12 gap-4 items-center text-dark ">
+    <div className=" group grid grid-cols-12 gap-4 items-center text-dark dark:text-light">
       <Link href={blog.url} 
       className="col-span-4 h-full rounded-xl overflow-hidden">
         <Image
@@ -19,13 +19,13 @@ function BlogLayoutTwo({ blog }) {
         />
       </Link>
       <div className="col-span-8 w-full ">
-        <span className="uppercase text-accent font-semibold text-sm">
+        <span className="uppercase text-accent dark:text-accentDark font-semibold text-sm">
             {blog.tags[0]}
         </span>
         <Link href={blog.url} className="inline-block my-1 ">
           <h1 className="font-semibold capitalize text-lg ">
             <span
-              className="bg-gradient-to-r from-accent/50 to-accent/50 bg-[length:0px_6px]
+              className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50 bg-[length:0px_6px]
               group-hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500
               "
             >
@@ -33,7 +33,7 @@ function BlogLayoutTwo({ blog }) {
             </span>
           </h1>
         </Link>
-        <span className="capitalize text-dark/50 font-semibold text-base">
+        <span className="capitalize text-dark/50 font-semibold text-base dark:text-light/50">
             {format(new Date(blog.publishedAt),"MMMM dd, yyyy")}
         </span>
       </div>

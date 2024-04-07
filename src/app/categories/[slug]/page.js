@@ -15,14 +15,19 @@ export async function generateStaticParams() {
         let slugfied = slugger.slug(tag);
         if (!categories.includes(slugfied)) {
           categories.push(slugfied);
-          paths.push({ slug: slugfied } );
+          paths.push({ slug: slugfied });
         }
       });
     }
   });
   return paths;
 }
-
+export async function generateMetadata({ params }) {
+  return {
+    title: `${params.slug.replaceAll("-"," ")} Blogs`,
+    description: `Learn more about ${params.slug === "all"?"web development":params.slug} through our collection of expert blogs and tutorials`,
+  };
+}
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {
@@ -39,7 +44,7 @@ const CategoryPage = ({ params }) => {
   });
 
   return (
-    <article className="mt-12 flex flex-col text-dark">
+    <article className="mt-12 flex flex-col text-dark dark:text-light">
       <div className="px-32 flex flex-col">
         <h1 className="mt-16 font-semibold text-5xl">#{params.slug}</h1>
         <span className="mt-2 inline-block">
@@ -51,11 +56,11 @@ const CategoryPage = ({ params }) => {
         categories={allCategories}
         currentSlug={params.slug}
       />
-      <div className="grid grid-cols-3 grid-rows-2 gap-16 mt-24 px-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-24 px-32">
         {blogs.map((blog, index) => {
           return (
             <article key={index} className="col-span-1 row-span-1 relative">
-              <BlogLayoutThree blog={blog} />a
+              <BlogLayoutThree blog={blog} />
             </article>
           );
         })}
