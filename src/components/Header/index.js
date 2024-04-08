@@ -2,12 +2,12 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { IoMdSunny } from "react-icons/io";
+
 import siteMetadata from "@/utils/siteMetaData";
-import { useThemeSwitch } from "../Hooks/useThemeSwitch";
-import { useState } from "react";
+
+import ToggleButton from "./ToggleButton";
 const Header = () => {
-  const [mode, setMode] = useThemeSwitch();
+  
   return (
     <header className="w-full p-4 px-10 flex items-center justify-between z-50 text-dark dark:text-light">
       <Logo />
@@ -30,9 +30,7 @@ const Header = () => {
         <a href="https://djsydor.vercel.app/" target="BLANK">
           Portfólio
         </a>
-        <button onClick={() => setMode(mode === "light" ? "dark" : "light")  }>
-          <IoMdSunny fontSize={25} className="animate-spin-slow" />
-        </button>
+        <ToggleButton/>
       </nav>
       <div className="flex gap-3">
         <a href={`${siteMetadata.github}`} className="text-lg" target="BLANK">
