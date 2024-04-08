@@ -60,7 +60,7 @@ export default function Page({ params }) {
             link={`/categories/${slug(blog.tags[0])}`}
             className="px-6 text-sm py-2"
           />
-          <h1 className="text-light inline-block mt-6 font-semibold captalize text-2xl leading-normal relative w-6/2 bg-dark/80 p-4 rounded-md">
+          <h1 className="text-light inline-block mt-6 font-semibold captalize text-2xl leading-normal relative w-6/2 bg-dark/70 p-4 rounded-md">
             {blog.title}
           </h1>
         </div>
