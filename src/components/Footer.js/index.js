@@ -10,7 +10,6 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
   return (
     <footer className="w-full mt-16 rounded-2xl flex flex-col items-center justify-center pb-16 bg-slate-100 dark:bg-dark dark:text-light">
       <h3 className="mt-16 font-medium text-center capitalize text-4xl px-4">Interesting Stories | Updates | Guides</h3>

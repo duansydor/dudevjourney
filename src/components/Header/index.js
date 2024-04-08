@@ -1,15 +1,16 @@
-"use client"
+"use client";
 import Logo from "./Logo";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
-import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import siteMetadata from "@/utils/siteMetaData";
-function Header() {
-  const [mode, setMode] = useThemeSwitch()
+import { useThemeSwitch } from "../Hooks/useThemeSwitch";
+import { useState } from "react";
+const Header = () => {
+  const [mode, setMode] = useThemeSwitch();
   return (
     <header className="w-full p-4 px-10 flex items-center justify-between z-50 text-dark dark:text-light">
-      <Logo/>
+      <Logo />
       <nav
         className="
         fixed top-24 left-1/2 -translate-x-1/2  w-max 
@@ -23,27 +24,29 @@ function Header() {
         <Link className="mr-2" href="/">
           Home
         </Link>
-        <Link className="mr-2" href="/about">
-          About
+        <Link className="mr-2" href="/categories/all">
+          Categories
         </Link>
-        <Link className="mr-2" href="/contact">
-          Contact
-        </Link>
-        <button onClick={()=>{setMode(mode === "light"?"dark":"light")}}><IoMdSunny fontSize={25} className="animate-spin-slow"/></button>
+        <a href="https://djsydor.vercel.app/" target="BLANK">
+          Portfólio
+        </a>
+        <button onClick={() => setMode(mode === "light" ? "dark" : "light")  }>
+          <IoMdSunny fontSize={25} className="animate-spin-slow" />
+        </button>
       </nav>
       <div className="flex gap-3">
         <a href={`${siteMetadata.github}`} className="text-lg" target="BLANK">
-          <FaGithub  fontSize={30}/>
+          <FaGithub fontSize={30} />
         </a>
         <a href={`${siteMetadata.instagram}`} target="BLANK">
-          <FaInstagram fontSize={30}/>
+          <FaInstagram fontSize={30} />
         </a>
         <a href={`${siteMetadata.linkedin}`} target="BLANK">
-          <FaLinkedin fontSize={30}/>
+          <FaLinkedin fontSize={30} />
         </a>
       </div>
     </header>
   );
-}
+};
 
 export default Header;
