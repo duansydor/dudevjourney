@@ -10,7 +10,7 @@ const mdxComponets = {
 const RenderMdx = ({blog}) => {
     const MDXContent = useMDXComponent(blog.body.code)
     return (
-    <div className='px-4 col-span-7 font-in prose prose-lg max-w-max
+    <div className='px-4 col-span-12 md:col-span-7 font-in prose prose-lg max-w-max
     prose-blockquote:bg-accent/50 
     prose-blockquote:border-accent
     prose-blockquote:px-6
